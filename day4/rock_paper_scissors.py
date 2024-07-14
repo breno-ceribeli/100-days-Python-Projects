@@ -56,4 +56,3 @@ if choice == "rock" or choice == "paper" or choice == "scissors":
         print("You lose")
 else:
     print("You typed an invalid option. You lose") 
-#Up to now, I haven't seen anything about loops in Python during the course, so I won't use them for now; I might update the project later
