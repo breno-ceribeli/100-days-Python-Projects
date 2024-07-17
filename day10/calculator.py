@@ -58,6 +58,8 @@ def calculator():
     shouldContinue = True
     while shouldContinue:
         operationSymbol = input("Operation: ")
+        while operationSymbol not in operations:
+            operationSymbol = input("Please type a valid operation: ")
 
         num2 = float(input("Next number: "))
         while num2 == 0 and operationSymbol == "/":
