@@ -33,11 +33,15 @@ def multiply(n1, n2):
 def divide(n1, n2):
     return n1 / n2
 
+def power(n1, n2):
+    return n1 ** n2
+
 operations = {
     "+": add,
     "-": subtract,
     "*": multiply,
     "/": divide,
+    "^": power,
 }
 
 # recursion
@@ -62,15 +66,22 @@ def calculator():
             operationSymbol = input("Please type a valid operation: ")
 
         num2 = float(input("Next number: "))
+
         while num2 == 0 and operationSymbol == "/":
             num2 = float(input("It's not possible to divide by 0, please type another number: "))
+
+        if operationSymbol == "^":
+            while num1 == 0 and num2 < 0:
+                num2 = float(input("It's not possible to divide by 0, please type another number: "))
+            while num1 < 0 and num2 != int(num2):
+                num2 = float(input("It's not possible to give the root of a negative number, please type another number: "))
 
         calculationFunction = operations[operationSymbol]
         result = calculationFunction(num1, num2)
 
         print(f"{roundFloat(num1)} {operationSymbol} {roundFloat(num2)} = {roundFloat(result)}")
 
-        restart = input(f"Type 'y' to continue calculating with {result} or type 'n' to start a new calculation: ").lower()
+        restart = input(f"Type 'y' to continue calculating with {roundFloat(result)} or type 'n' to start a new calculation: ").lower()
         if restart == 'y':
             num1 = result
         elif restart == 'n':
