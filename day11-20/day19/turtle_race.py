@@ -3,6 +3,7 @@ from random import randint
 
 screen = Screen()
 screen.setup(width=500, height=400)
+screen.title("Turtle Race")
 user_bet = ""
 colors = ["red", "blue", "green", "purple", "orange", "yellow"]
 y_positions = [100, 60, 20, -20, -60, -100]
@@ -27,6 +28,7 @@ while race_on:
                 print(f"You've Won! The {winning_color} turtle is the winner!")
             else:
                 print(f"You've lost! The {winning_color} turtle is the winner!")
+            break
 
         turtle.forward(randint(0, 10))
 
