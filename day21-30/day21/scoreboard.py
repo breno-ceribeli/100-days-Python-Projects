@@ -45,7 +45,8 @@ class Scoreboard(Turtle):
         def blink_message(counter=5):
             """
             Makes the 'GAME OVER' message blink a specified number of times.
-            :param counter: Number of blinks remaining.
+            Args:
+                counter: Number of blinks remaining.
             """
             if counter > 0:
                 if game_over_turtle.isvisible():
