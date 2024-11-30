@@ -23,12 +23,14 @@ class Paddle(Turtle):
         """
         Move the paddle upwards by 20 units.
         """
-        new_y = self.ycor() + 20
-        self.goto(self.xcor(), new_y)
+        if self.ycor() < 230:
+            new_y = self.ycor() + 20
+            self.goto(self.xcor(), new_y)
 
     def move_down(self):
         """
         Move the paddle downwards by 20 units.
         """
-        new_y = self.ycor() - 20
-        self.goto(self.xcor(), new_y)
+        if self.ycor() > -230:
+            new_y = self.ycor() - 20
+            self.goto(self.xcor(), new_y)
