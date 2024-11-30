@@ -15,6 +15,8 @@ class Scoreboard(Turtle):
         """Initializes the scoreboard with a starting score of 0."""
         super().__init__()
         self.score = 0
+        self.game_speed = 0.1
+        self.increase_speed_score = 10
         self.hideturtle()
         self.penup()
         self.goto(0, 287)  # Position the scoreboard at the top-center of the screen
@@ -26,10 +28,12 @@ class Scoreboard(Turtle):
         self.write(f"Score: {self.score}", align="center", font=FONT)
 
     def increase_score(self):
-        """Increments the score by 1 and updates the scoreboard."""
+        """Increments the score by 1, updates the scoreboard and increases the game speed."""
         self.score += 1
         self.clear()  # Clear the previous score display
         self.update_scoreboard()
+        if self.score == self.increase_speed_score:
+            self.game_speed *= 0.9
 
     def game_over(self):
         """
