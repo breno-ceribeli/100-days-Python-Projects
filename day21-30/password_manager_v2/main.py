@@ -178,13 +178,13 @@ password_input.grid(row=3, column=1)
 get_default_email()
 
 # Buttons
-website_search_button = Button(text="Search", width=15, command=search_website_data)
+website_search_button = Button(text="Search", width=15, cursor="hand2", command=search_website_data)
 website_search_button.grid(row=1, column=2)
-default_email_button = Button(text="Set default", width=15, command=set_default_email)
+default_email_button = Button(text="Set default", width=15, cursor="hand2", command=set_default_email)
 default_email_button.grid(row=2, column=2)
-password_generate_button = Button(text="Generate Password", width=15, command=copy_random_password)
+password_generate_button = Button(text="Generate Password", width=15, cursor="hand2", command=copy_random_password)
 password_generate_button.grid(row=3, column=2)
-password_add_button = Button(text="Add", width=44, command=save_data)
+password_add_button = Button(text="Add", width=44, cursor="hand2", command=save_data)
 password_add_button.grid(row=4, column=1, columnspan=2)
 
 window.mainloop()
